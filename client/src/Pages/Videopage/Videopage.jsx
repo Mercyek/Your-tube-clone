@@ -11,7 +11,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const Videopage = () => {
     const [videoSrc, setVideoSrc] = useState(null);
-    const [vv, setVv] = useState(null);
+    const [vv, setVv] = useState(null); // vv is initially null
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
     const { vid } = useParams();
@@ -59,28 +59,32 @@ const Videopage = () => {
             <div>
                 <h1>Video Player</h1>
             </div>
-            {isVideoPlaying && (
-            <VideoPlayer
-                videoSrc={videoSrc}
-                onNextVideo={() => setVideoSrc('video2.mp4')}
-                onCloseWebsite={() => window.close()}
-                onShowComments={() => console.log('Showing comments')}
-            />
+            {isVideoPlaying && vv && (
+                <VideoPlayer
+                    videoSrc={videoSrc}
+                    onNextVideo={() => setVideoSrc('video2.mp4')}
+                    onCloseWebsite={() => window.close()}
+                    onShowComments={() => console.log('Showing comments')}
+                />
             )}
             <div className="container_videoPage">
                 <div className="container2_videoPage">
                     <div className="video_display_screen_videoPage">
-                        <video
-                            src={`https://your-tube-clone-2oiv.onrender.com/${vv?.filepath}`}
-                            className="video_ShowVideo_videoPage"
-                            controls
-                        ></video>
+                        {vv ? (
+                            <video
+                                src={`https://your-tube-clone-2oiv.onrender.com/${vv?.filepath}`}
+                                className="video_ShowVideo_videoPage"
+                                controls
+                            ></video>
+                        ) : (
+                            <p>Loading video...</p> // Show loading text if vv is not set yet
+                        )}
                         <div className="video_details_videoPage">
                             <div className="video_btns_title_VideoPage_cont">
                                 <p className="video_title_VideoPage">{vv?.title || 'Loading...'}</p>
                                 <div className="views_date_btns_VideoPage">
                                     <div className="views_videoPage">
-                                        {vv?.views} views <div className="dot"></div>{" "}
+                                        {vv?.views ? `${vv?.views} views` : 'Loading views'} <div className="dot"></div>{" "}
                                         {vv?.createdat ? moment(vv.createdat).fromNow() : 'Loading...'}
                                     </div>
                                    {vv && <Likewatchlatersavebtns vv={vv} vid={vid} />}
@@ -95,10 +99,10 @@ const Videopage = () => {
                             <div className="comments_VideoPage">
                                 <h2><u>Comments</u></h2>
                                 {vv?._id ? (
-                                   <Comment videoid={vv._id} />
-                           ) : (
-                                   <p>Loading comments...</p>
-                           )}
+                                    <Comment videoid={vv._id} />
+                                ) : (
+                                    <p>Loading comments...</p>
+                                )}
                             </div>
                         </div>
                     </div>
