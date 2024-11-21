@@ -2,7 +2,8 @@ import React from 'react'
 import "./Showvideogrid.css"
 import Showvideo from '../Showvideo/Showvideo'
 const Showvideogrid = ({vid}) => {
-  return (
+
+ return (
     <div className="Container_ShowVideoGrid">
         {
             vid?.reverse().map(vi=>{

@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 const Leftsidebar = () => {
   return (
     <div className="container_leftSidebar">
-        <NavLink to={'/'} className="icon_sidebar_div">
+        <NavLink to={'/Home'} className="icon_sidebar_div">
             <AiOutlineHome size={22} className='icon_sidebar'/>
             <div className="text_sidebar_icon">Home</div>
         </NavLink>

@@ -1,18 +1,18 @@
 import React from 'react'
 import Showvideo from "../Showvideo/Showvideo"
-import vid from "../Video/vid.mp4"
 import { useSelector } from 'react-redux'
+import { RiVideoUploadLine } from 'react-icons/ri'
 const Showvideolist = ({videoid}) => {
-  const vids=useSelector(state=>state.videoreducer)
-    // const vids=[
-    //     {
-    //       _id:1,
-    //       video_src:vid,
-    //       chanel:"wvjwenfj3njfwef",
-    //       title:"video 1",
-    //       uploader:"abc",
-    //       description:"description of video 1"
-    //     },
+ const vids=useSelector(state=>state.videoreducer)
+    //  const vids=[
+    //   {
+    //   _id:1,
+    //     video_src:vids,
+    //    chanel:"wvjwenfj3njfwef",
+    //  title:"video 1",
+    //  uploader:"abc",
+    //  description:"description of video 1"
+    //   },]
     //     {
     //       _id:1,
     //       video_src:vid,
@@ -45,7 +45,7 @@ const Showvideolist = ({videoid}) => {
     //       uploader:"abc",
     //       description:"description of video 4"
     //     },
-    //   ]
+     // ]
       console.log(videoid)
   return (
     <div className="Container_ShowVideoGrid">

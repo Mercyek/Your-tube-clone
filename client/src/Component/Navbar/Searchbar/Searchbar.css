@@ -45,3 +45,13 @@
       color: whitesmoke;
       margin: auto 0.7rem;
   }
+
+  .chat-icon {
+    color: #007bff;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+  .chat-icon:hover {
+    color: #0056b3;
+  }

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import logo from "./logo.ico"
+import logo from "../../logo.png"
 import "./Navbar.css"
 import { useDispatch, useSelector} from 'react-redux'
 import {Link, generatePath} from "react-router-dom"
@@ -90,8 +90,8 @@ const Navbar = ({toggledrawer,seteditcreatechanelbtn}) => {
                         <p></p>
                     </div>
                     <Link to={"/"} className='logo_div_Navbar'>
-                        <img src={logo} alt="" />
-                        <p className="logo_title_navbar">Your-Tube</p>
+                    <img src={{logo}} alt="YouTube Logo" style={{ width: '100px', height: 'auto' }} /> {/* Display logo */}
+                       <p className="logo_title_navbar">Your-Tube</p>
                     </Link>
                 </div>
                 <Searchbar />

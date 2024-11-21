@@ -1,6 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
 import React,{ useEffect, useState} from "react"
+import Videopage from './Pages/Videopage/Videopage'; 
+import './App.css';
+import PrivateRoomChat from './PrivateRoomChat';
 import Navbar from './Component/Navbar/Navbar';
 import { useDispatch } from 'react-redux';
 import Allroutes from "../src/Allroutes"
@@ -44,7 +45,8 @@ function App() {
   const [editcreatechanelbtn,seteditcreatechanelbtn]=useState(false);
   const [videouploadpage,setvideouploadpage]=useState(false);
   return (
-    <Router>
+    <div className="App">
+     <Router>
     {
         videouploadpage && <Videoupload setvideouploadpage={setvideouploadpage} />
       }
@@ -54,7 +56,10 @@ function App() {
       <Navbar seteditcreatechanelbtn={seteditcreatechanelbtn} toggledrawer={toggledrawer}/>
       <Drawersliderbar toggledraw={toggledrawer} toggledrawersidebar={toggledrawersidebar} />
       <Allroutes seteditcreatechanelbtn={seteditcreatechanelbtn} setvideouploadpage={setvideouploadpage} />
+      <Videopage />
+      <PrivateRoomChat />
     </Router>
+    </div>
    );
 }
 

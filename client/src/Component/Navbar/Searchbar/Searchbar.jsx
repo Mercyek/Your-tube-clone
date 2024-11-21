@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import "./Searchbar.css"
 import {BsMicFill} from "react-icons/bs"
-import {FaSearch} from "react-icons/fa"
+import {FaSearch, FaComments} from "react-icons/fa"
 import Searchlist from './Searchlist'
 
 import { Link } from 'react-router-dom'
@@ -18,7 +18,8 @@ const Searchbar = () => {
                     <div className="Search_div">
                         <input type="text" className='iBox_SearchBar' placeholder='Search' onChange={e=>setsearchquery(e.target.value)} value={Searchquery} onClick={e=>setsearchlist(true)}/>
                         <Link to={`/search/${Searchquery}`}>
-                            <FaSearch className="searchIcon_SearchBar"/>
+                        <FaSearch className="search-icon"/>
+                        <FaComments className="chat-icon" />
                         </Link>
                         <BsMicFill className='Mic_SearchBar'/>
                         {Searchquery && searchlist &&

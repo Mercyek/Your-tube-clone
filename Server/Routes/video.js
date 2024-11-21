@@ -24,7 +24,7 @@ routes.get('/getallwatchlater',getallwatchlatervontroller)
 routes.delete('/deletewatchlater/:videoid/:viewer',auth,deletewatchlater)
 
 routes.post('/likevideo',auth,likedvideocontroller)
-routes.get('/getalllikevide',getalllikedvideo)
+routes.get('/getalllikevideo',getalllikedvideo)
 routes.delete('/deletelikevideo/:videoid/:viewer',auth,deletelikedvideo)
 
 export default routes

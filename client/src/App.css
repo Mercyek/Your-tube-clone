@@ -39,3 +39,44 @@ video {
   background-color: white;
   margin: auto 0.5rem;
 }
+
+
+.App-header {
+  display: flex;
+  align-items: center;   /* Align logo and text vertically */
+  justify-content: center; /* Center content horizontally */
+  padding: 20px;
+  background-color: #f8f8f8; /* Light background color */
+}
+
+/* Styling for the logo image */
+.logo {
+  width: 120px;   /* Set a specific width for the logo */
+  height: auto;   /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo fits within the given width without distortion */
+  margin-right: 20px; /* Add spacing between the logo and other content */
+}
+
+/* src/App.css or src/components/VideoPlayer.css */
+.video-player-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.play-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}

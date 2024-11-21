@@ -4,8 +4,8 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { uploadvideo } from '../../action/video'
 const Videoupload = ({ setvideouploadpage }) => {
-    const [title, settitle] = useState("")
-    const [videofile, setvideofile] = useState("")
+    const [title, settitle] = useState();
+    const [videofile, setvideofile] = useState();
     const [progress, setprogress] = useState(0)
     const dispatch = useDispatch()
     const handlesetvideofile = (e) => {
